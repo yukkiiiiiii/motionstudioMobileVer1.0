@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="motionstudioMobile.LogInPage"
+             Title="LogInPage">
+    <VerticalStackLayout>
+        <Entry
+            Placeholder="Email"
+            HorizontalOptions="Fill"/>
+        <Entry
+            Placeholder="Password"          
+            HorizontalOptions="Fill"/>
+        <Button
+            x:Name="LogInBtn"
+            Text="Log In"
+            Clicked="LogInBtn_Clicked"
+            SemanticProperties.Hint="Transitions to the next page."
+            HorizontalOptions="CenterAndExpand"/>
+
+        <Label
+            Text="Don't have an account?"/>
+
+        <Label Text="Sign Up!" FontAttributes="Bold" TextColor="Blue" Style="{StaticResource SubHeadline}" FontSize="Micro"> 
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+      
+        
+    </VerticalStackLayout>
+</ContentPage>
