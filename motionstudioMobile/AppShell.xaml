@@ -15,10 +15,14 @@
      Route="MainPage" />
 
     <ShellContent
- Title="Home"
- ContentTemplate="{DataTemplate local:LogInPage}"
- Route="LogIn" />
+    Title="Home"
+    ContentTemplate="{DataTemplate local:LogInPage}"
+    Route="LogIn" />
 
+    <ShellContent
+    Title="Inquiries"
+    ContentTemplate="{DataTemplate local:Inquiries}"
+    Route="Inquiries" />
 
 
 
