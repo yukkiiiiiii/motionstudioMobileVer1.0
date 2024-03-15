@@ -31,5 +31,9 @@ namespace motionstudioMobile
                 InquiryResult = $"Request error: {ex.Message}";
             }
         }
+        private async void OnBackButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              x:Class="motionstudioMobile.Inquiries">
 
-    <VerticalStackLayout>
-        <!--<Image
-        Source="motion.png"                
-        Aspect="Center"
-        SemanticProperties.Description="Logo" />-->
-        <Label Text="Inquiries"></Label>
-        <Label Text="lorem ispum small description about this section"></Label>
-        <Entry
-        Placeholder="Name"
-        HorizontalOptions="Fill"/>
-        <Entry
-        Placeholder="Email"
-        HorizontalOptions="Fill"/>
-        <Entry
-        Placeholder="Phone Number"
-        HorizontalOptions="Fill"/>
-        <Entry
-        Placeholder="Message"
-        HorizontalOptions="FillAndExpand"/>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry" x:Key="BorderlessEntryStyle">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <!-- Set fixed height and width for the entries -->
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="200" />
+                <!-- Center text horizontally and vertically -->
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-        <!-- Display the result of the inquiry here -->
-        <Label Text="{Binding InquiryResult}" />
-        <!-- Trigger the inquiry request -->
-        <Button Text="Submit" Clicked="OnMakeInquiryClicked" />
-    </VerticalStackLayout>
+    
+    <NavigationPage.TitleView>
+        <Grid BackgroundColor="{StaticResource Primary}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Back" Clicked="OnBackButtonClicked" />
+            <Label Grid.Column="1" Text="Inquiries" TextColor="White" VerticalOptions="CenterAndExpand" />
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <VerticalStackLayout>
+            <!--<Image
+                Source="motion.png"                
+                Aspect="Center"
+                SemanticProperties.Description="Logo" />-->
+
+            <Label Text="Inquiries"></Label>
+
+            <HorizontalStackLayout>
+                <Label Text="lorem ispum small description about this section" />
+            </HorizontalStackLayout>
+           
+            <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="15">
+                <Entry Placeholder="Name" Style="{StaticResource BorderlessEntryStyle}" HorizontalOptions="FillAndExpand" WidthRequest="1000"/>
+                <Entry Placeholder="Email" Style="{StaticResource BorderlessEntryStyle}" HorizontalOptions="FillAndExpand" WidthRequest="1000"/>
+                <Entry Placeholder="Phone Number" Style="{StaticResource BorderlessEntryStyle}" HorizontalOptions="FillAndExpand" WidthRequest="1000" />
+                <!-- Wider and more rectangular "Message" entry using TextArea -->
+                <Entry Placeholder="Message" Style="{StaticResource BorderlessEntryStyle}"
+               HorizontalOptions="FillAndExpand"
+               IsTextPredictionEnabled="False" 
+                    Keyboard="Text"
+                    VerticalOptions="Start"
+                    HeightRequest="300"
+                    WidthRequest="1000"
+                    />
+            </StackLayout>
+
+            <!-- Display the result of the inquiry here -->
+            <Label Text="{Binding InquiryResult}" />
+            <!-- Trigger the inquiry request -->
+            <Button Text="Submit" Clicked="OnMakeInquiryClicked" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
 
 </ContentPage>

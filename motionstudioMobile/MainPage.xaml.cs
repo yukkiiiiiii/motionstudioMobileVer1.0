@@ -7,6 +7,7 @@
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetBackButtonTitle(this, "Back");
         }
 
         private async void OnCounterClicked(object sender, EventArgs e)
