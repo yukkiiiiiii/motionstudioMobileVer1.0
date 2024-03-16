@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="motionstudioMobile.QuestionPage"
+             Title="QuestionPage">
+    <VerticalStackLayout
+        BackgroundColor="#2b2b2b"
+        Padding="30,0"
+        Spacing="25">
+        
+        <Label 
+            Text="Why are you working out?"            
+            FontAttributes="Bold"
+            Style="{StaticResource Headline}"            
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Margin="0,170,0,0"/>
+
+        <Button
+            x:Name="FirstOption"
+            Text="To become a body builder"
+            FontAttributes="Bold"
+            FontSize="Large"
+            HeightRequest="60"
+            WidthRequest="300"
+            Margin="0,30,0,0"
+            Clicked="FirstOption_Clicked"/>
+
+        <Button
+            x:Name="SecondOption"
+            Text="Just for fun"
+            FontAttributes="Bold"
+            FontSize="Large"
+            HeightRequest="60"
+            WidthRequest="300"
+            Margin="0,30,0,0"
+            Clicked="FirstOption_Clicked"/>
+
+        <Button
+            x:Name="ThirdOption"
+            Text="To become healthy"
+            FontAttributes="Bold"
+            FontSize="Large"
+            HeightRequest="60"
+            WidthRequest="300"
+            Margin="0,30,0,0"
+            Clicked="FirstOption_Clicked"/>
+
+        <Button
+            x:Name="FourthOption"
+            Text="For a different reason"
+            FontAttributes="Bold"
+            FontSize="Large"
+            HeightRequest="60"
+            WidthRequest="300"
+            Margin="0,30,0,0"
+            Clicked="FirstOption_Clicked"/>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
