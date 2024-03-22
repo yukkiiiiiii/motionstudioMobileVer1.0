@@ -4,9 +4,10 @@
              xmlns:d="http://schemas.microsoft.com/dotnet/maui/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="motionstudioMobile.Inquiries">
+             x:Class="motionstudioMobile.Inquiries"
+             Title="">
 
-    <ContentPage.Resources>
+        <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Entry" x:Key="BorderlessEntryStyle">
                 <Setter Property="BackgroundColor" Value="Transparent" />
@@ -20,51 +21,28 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    
-    <NavigationPage.TitleView>
-        <Grid BackgroundColor="{StaticResource Primary}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button Text="Back" Clicked="OnBackButtonClicked" />
-            <Label Grid.Column="1" Text="Inquiries" TextColor="White" VerticalOptions="CenterAndExpand" />
-        </Grid>
-    </NavigationPage.TitleView>
+ 
+        <ContentPage.Content>
 
-    <ContentPage.Content>
         <VerticalStackLayout>
-            <!--<Image
-                Source="motion.png"                
-                Aspect="Center"
-                SemanticProperties.Description="Logo" />-->
+            <Label Text="Get In touch with us." FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="StartAndExpand" Padding="0,0,0,10" />
+            <Label Text="If you have any concerns or questions, leave a message." HorizontalOptions="Center" Padding="0,0,0,10" />
 
-            <Label Text="Inquiries"></Label>
-
-            <HorizontalStackLayout>
-                <Label Text="lorem ispum small description about this section" />
-            </HorizontalStackLayout>
-           
             <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="15">
-                <Entry Placeholder="Name" Style="{StaticResource BorderlessEntryStyle}" HorizontalOptions="FillAndExpand" WidthRequest="1000"/>
-                <Entry Placeholder="Email" Style="{StaticResource BorderlessEntryStyle}" HorizontalOptions="FillAndExpand" WidthRequest="1000"/>
-                <Entry Placeholder="Phone Number" Style="{StaticResource BorderlessEntryStyle}" HorizontalOptions="FillAndExpand" WidthRequest="1000" />
-                <!-- Wider and more rectangular "Message" entry using TextArea -->
-                <Entry Placeholder="Message" Style="{StaticResource BorderlessEntryStyle}"
-               HorizontalOptions="FillAndExpand"
-               IsTextPredictionEnabled="False" 
-                    Keyboard="Text"
-                    VerticalOptions="Start"
-                    HeightRequest="300"
-                    WidthRequest="1000"
-                    />
+                <Entry x:Name="txtName" Placeholder="Name" HorizontalOptions="FillAndExpand" WidthRequest="450"
+                TextChanged="NameEntry_TextChanged" />
+
+                <Entry x:Name="txtEmail" Placeholder="Email" HorizontalOptions="FillAndExpand" WidthRequest="450"/>
+                <Entry x:Name="txtPhone" Placeholder="Phone Number" HorizontalOptions="FillAndExpand" WidthRequest="450"
+       MaxLength="11" Keyboard="Telephone" TextChanged="PhoneEntry_TextChanged" />
+
+                <Editor x:Name="txtMessage" Placeholder="Message" HorizontalOptions="FillAndExpand" WidthRequest="450"
+            HeightRequest="120" MaxLength="500" TextColor="white" />
+
+                <Button Text="Submit" HorizontalOptions="Center" Clicked="SubmitButton_Click"/>
             </StackLayout>
 
-            <!-- Display the result of the inquiry here -->
-            <Label Text="{Binding InquiryResult}" />
-            <!-- Trigger the inquiry request -->
-            <Button Text="Submit" Clicked="OnMakeInquiryClicked" />
         </VerticalStackLayout>
     </ContentPage.Content>
-
+ 
 </ContentPage>

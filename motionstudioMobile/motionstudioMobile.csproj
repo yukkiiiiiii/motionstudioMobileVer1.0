@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\motion.png" />
+	  <None Remove="Resources\Images\motionlogoyellowblack.png" />
 	</ItemGroup>
 
 	<ItemGroup>
