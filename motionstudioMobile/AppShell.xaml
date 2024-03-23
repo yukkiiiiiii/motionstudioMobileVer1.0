@@ -24,6 +24,10 @@
     ContentTemplate="{DataTemplate local:Inquiries}"
     Route="Inquiries" />
 
+    <ShellContent
+    Title="Meals"
+    ContentTemplate="{DataTemplate local:Meals}"
+    Route="Meals" />
 
 
 

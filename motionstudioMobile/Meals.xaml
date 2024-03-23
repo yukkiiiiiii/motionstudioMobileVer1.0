@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="motionstudioMobile.Meals"
+             Title="Meals">
+    <ContentPage.Content>
+        <FlexLayout Direction="Row" JustifyContent="Center" AlignItems="Center" Padding="10">
+            <Label Text="Lorem Ipsum" FontSize="Large" HorizontalOptions="Start" Margin="0,0,0,10" />
+            <!-- Breakfast category -->
+            <Label Text="Breakfast" FontSize="Small" TextColor="#007ACC" Margin="5">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToBreakfastCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Lunch category -->
+            <Label Text="Lunch" FontSize="Small" TextColor="#007ACC" Margin="5">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToLunchCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Dinner category -->
+            <Label Text="Dinner" FontSize="Small" TextColor="#007ACC" Margin="5">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToDinnerCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </FlexLayout>
+    </ContentPage.Content>
+
+</ContentPage>

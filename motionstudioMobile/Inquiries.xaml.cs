@@ -9,7 +9,7 @@ namespace motionstudioMobile
         private bool isAnimating = false;
         private bool isPhoneAnimating = false;
         public Inquiries()
-        {
+        {   
             InitializeComponent(); 
         }
 
